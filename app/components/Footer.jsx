@@ -1,5 +1,5 @@
 // Include React
-import React, { Component }from "react";
+import React, { Component } from "react";
 
 // Create Footer class
 class Footer extends Component {
@@ -9,15 +9,22 @@ class Footer extends Component {
 	}
 
 	assignHref(){
-		switch (this.props.component){
+		switch (this.props.mainComponent){
 			case "main":
-				return "#personal-area"
+				return "#personal-area";
 				break;
 			case "portfolio":
-				return "#portfolio"
+				return "#portfolio";
+				break;
+			case "timeline":
+				return "#my-timeline";
+				break;
+			case "contact":
+				return "#contact";
 				break;
 			default:
-				return "#personal-area"
+				return "#personal-area";
+				break;
 		}
 	}
 	

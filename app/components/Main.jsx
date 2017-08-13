@@ -1,25 +1,30 @@
 // Include React
-import React, { Component }from "react";
+import React, { Component } from "react";
 
-//Import high level component
+//Import high level mainComponent
 import Header from "./Header";
 import Footer from "./Footer";
 import Jumbotron from "./children/Jumbotron";
 import AboutMe from "./children/AboutMe";
 import Portfolio from "./children/Portfolio";
+import Timeline from "./children/Timeline";
+import Contact from "./children/Contact";
+import ContactBG from "./children/ContactBG";
 
 class Main extends Component {
+
     constructor(props){
         super(props)
         this.state = {
-            component: "main"
+            mainComponent: "main"
         }
-        this.setComponent = this.setComponent.bind(this);
+        this.setMainComponent = this.setMainComponent.bind(this);
     }
 
-    setComponent(comp) {
-        this.setState({component: comp});
+    setMainComponent(comp) {
+        this.setState({mainComponent: comp});
     }
+
     componentDidMount(){
 		// $.getScript("js/easing.js");
 		// $.getScript("js/particles-config.js");
@@ -37,11 +42,14 @@ class Main extends Component {
     render(){
         return(
             <div id="main-div">
-                 <Header component={this.state.component} setComponent={this.setComponent}/>
-                    <Jumbotron component={this.state.component}/>
-                    <AboutMe component={this.state.component}/>
-                    <Portfolio component={this.state.component}/>
-                 <Footer component={this.state.component}/>
+                 <Header mainComponent={this.state.mainComponent} setMainComponent={this.setMainComponent}/>
+                    <Portfolio mainComponent={this.state.mainComponent} /> 
+                    <Jumbotron mainComponent={this.state.mainComponent} />
+                    <AboutMe mainComponent={this.state.mainComponent} />
+                    <Timeline mainComponent={this.state.mainComponent} />
+                    <Contact mainComponent={this.state.mainComponent} />
+                    <ContactBG mainComponent={this.state.mainComponent} />
+                 <Footer mainComponent={this.state.mainComponent} />
             </div>
         )
     }  

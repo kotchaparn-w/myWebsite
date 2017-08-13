@@ -11,7 +11,7 @@ class AboutMe extends Component {
     }
 
     render(){
-        if(this.props.component == "main"){
+        if(this.props.mainComponent == "main"){
         return(
             //  Start About Me
             <section id="about-me" className="section default">

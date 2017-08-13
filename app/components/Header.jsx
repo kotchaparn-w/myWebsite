@@ -30,7 +30,7 @@ class Header extends Component {
     handleClick(link){
         event.preventDefault();
         // set its parent state
-        this.props.setComponent(link);
+        this.props.setMainComponent(link);
     }
 
     render(){
@@ -52,18 +52,18 @@ class Header extends Component {
                                 <nav className="Headermenu">
                                     <div className="collapse navbar-collapse">
                                         <ul className="nav navbar-nav menu">
-                                            <li className={this.props.component == 'main'? "active": ""}>
+                                            <li className={this.props.mainComponent == 'main'? "active": ""}>
                                                 <a href="#" onClick={()=>this.handleClick('main')}>
                                                     <i className="fa fa-home"></i>Bell's Homepage</a></li>
-                                            <li className={this.props.component == 'portfolio'? "active": ""}>
+                                            <li className={this.props.mainComponent == 'portfolio'? "active": ""}>
                                                 <a href="#" onClick={()=>this.handleClick('portfolio')}>
                                                     <i className="fa fa-briefcase"></i>Portfolio</a></li>
-                                            <li className={this.props.component == 'timeline'? "active": ""}>
+                                            <li className={this.props.mainComponent == 'timeline'? "active": ""}>
                                                 <a href="#" onClick={()=>this.handleClick('timeline')}>
                                                     <i className="fa fa-history"></i>Timeline</a></li>
-                                            <li className={this.props.component == 'contact'? "active": ""}>
+                                            <li className={this.props.mainComponent == 'contact'? "active": ""}>
                                                 <a href="#" onClick={()=>this.handleClick('contact')}>
-                                                    <i className="fa fa-address-book"></i>Contact></a></li>	
+                                                    <i className="fa fa-address-book"></i>Contact</a></li>	
                                         </ul>
                                         <ul className="social-icon">
                                             <li><a href="#header"><i className="fa fa-plus"></i></a></li>

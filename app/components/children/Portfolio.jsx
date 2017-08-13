@@ -3,13 +3,12 @@ import React, { Component } from "react";
 
 // Create Portfolio class
 class Portfolio extends Component {
-
-	componentDidMount(){
-		
+	constructor(props){
+		super(props)
 	}
 
     render(){
-		if(this.props.component == "portfolio"){
+		if(this.props.mainComponent == "portfolio"){
         return(
             <section id="portfolio" className="section">
 			<div className="container-fluid">

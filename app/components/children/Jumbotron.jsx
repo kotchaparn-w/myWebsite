@@ -22,7 +22,7 @@ class Jumbotron extends Component {
     }
 
     render() {
-		if(this.props.component == "main"){
+		if(this.props.mainComponent == "main"){
 			return(
 					<section id="personal-area" className="particle">
 						{/*  Start Personal Area */}
