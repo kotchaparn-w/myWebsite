@@ -1,0 +1,54 @@
+// Include React
+import React, { Component }from "react";
+
+// Create Footer class
+class Footer extends Component {
+	constructor(props){
+		super(props)
+		this.assignHref = this.assignHref.bind(this);
+	}
+
+	assignHref(){
+		switch (this.props.component){
+			case "main":
+				return "#personal-area"
+				break;
+			case "portfolio":
+				return "#portfolio"
+				break;
+			default:
+				return "#personal-area"
+		}
+	}
+	
+    render() {
+        return(
+            <footer id="footer">
+			{/* <!-- Arrow --> */}
+			<div className="arrow">
+				<a href={this.assignHref()} className="btn"><i className="fa fa-angle-up"></i></a>
+			</div>
+			<div className="container">
+				<div className="row">
+					<div className="col-md-6 col-sm-6 col-xs-12">
+						{/* <!-- Copyright --> */}
+						<div className="copyright">
+							<p>&copy; Copyright 2017 Kotchaparn Wongkor.</p>
+						</div>
+					</div>
+					<div className="col-md-6 col-sm-6 col-xs-12">
+						{/* <!-- Social --> */}
+						<ul className="social">
+							<li><a href="#"><i className="fa fa-linkedin"></i></a></li>
+							<li><a href="#"><i className="fa fa-github"></i></a></li>
+							<li><a href="#"><i className="fa fa-envelope"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+        )
+    }
+}
+
+export default Footer;
