@@ -3,26 +3,8 @@ import React, { Component } from "react";
 
 // Create Jumbotron class
 class Jumbotron extends Component {
-	constructor(props){
-		super(props)
-	}
-
-	componentDidMount(){
-		// $.getScript("js/easing.js");
-		$.getScript("js/particles-config.js");
-		$.getScript("js/animate-text.js");
-		// $.getScript("js/main.js");
-	}
-
-	componentDidUpdate(){
-		// $.getScript("js/easing.js");
-		$.getScript("js/particles-config.js");
-		$.getScript("js/animate-text.js");
-		// $.getScript("js/main.js");
-    }
 
     render() {
-		if(this.props.mainComponent == "main"){
 			return(
 					<section id="personal-area" className="particle">
 						{/*  Start Personal Area */}
@@ -44,6 +26,7 @@ class Jumbotron extends Component {
 																	<b className="is-visible">UI/UX DESIGNER</b>
 																	<b>Web Developer</b>
 																	<b>Markering Analyst</b>
+																	<b>Programmer</b>
 																</span>
 															</h2>
 														</div>
@@ -61,9 +44,6 @@ class Jumbotron extends Component {
 						</div>
 					</section>
 			);
-		} else {
-			return(<div/>);
-		}
 	}
 }
 // Export Jumbotron

@@ -4,55 +4,319 @@ import React, { Component } from "react";
 //Import high level mainComponent
 import Header from "./Header";
 import Footer from "./Footer";
-import Jumbotron from "./children/Jumbotron";
-import AboutMe from "./children/AboutMe";
-import Portfolio from "./children/Portfolio";
-import Timeline from "./children/Timeline";
-import Contact from "./children/Contact";
-import ContactBG from "./children/ContactBG";
 
 class Main extends Component {
 
     constructor(props){
         super(props)
-        this.state = {
-            mainComponent: "main"
-        }
-        this.setMainComponent = this.setMainComponent.bind(this);
+        this.mainScript = this.mainScript.bind(this);
     }
-
-    setMainComponent(comp) {
-        this.setState({mainComponent: comp});
+    componentWillUpdate(){
+        this.mainScript()
     }
 
     componentDidMount(){
-		// $.getScript("js/easing.js");
-		// $.getScript("js/particles-config.js");
-		// $.getScript("js/animate-text.js");
-		$.getScript("js/main.js");
-	}
-
-	componentDidUpdate(){
-		// $.getScript("js/easing.js");
-		// $.getScript("js/particles-config.js");
-		// $.getScript("js/animate-text.js");
-		$.getScript("js/main.js");
+        // $.getScript("js/particles-config.js");
+        // $.getScript("js/animate-text.js");
+        this.mainScript()
     }
 
-    render(){
-        return(
-            <div id="main-div">
-                 <Header mainComponent={this.state.mainComponent} setMainComponent={this.setMainComponent}/>
-                    <Portfolio mainComponent={this.state.mainComponent} /> 
-                    <Jumbotron mainComponent={this.state.mainComponent} />
-                    <AboutMe mainComponent={this.state.mainComponent} />
-                    <Timeline mainComponent={this.state.mainComponent} />
-                    <Contact mainComponent={this.state.mainComponent} />
-                    <ContactBG mainComponent={this.state.mainComponent} />
-                 <Footer mainComponent={this.state.mainComponent} />
-            </div>
-        )
-    }  
+    componentDidUpdate(){
+        // $.getScript("js/particles-config.js");
+        // $.getScript("js/animate-text.js");
+        this.mainScript()
+    }
+
+    render(){  
+            return(
+                <div id="main-div">
+                    <Header location={this.props.location.pathname}/>
+                        {this.props.children}
+                    <Footer location={this.props.location.pathname}/>
+                </div>
+            )    
+    } 
+
+    mainScript(){
+        // (function ($) {
+        //     "use strict";
+        //     $(document).ready(function(){
+                
+                function Maheraz_Custom_JS() {
+                    var windowS = $(window),
+                        windowH = windowS.height(),
+                        projecthoverS = $('.portfolio-hover'),
+                        projecthoverH = projecthoverS.height(),
+                        proejectdevide = (projecthoverH / 2);
+                        projecthoverS.css({
+                        marginTop: -proejectdevide,
+                    });
+                }; 
+                
+                /*====================================
+                //  Onepage Nav
+                ======================================*/ 
+                if ($.fn.onePageNav) {
+                    $('.mainmenu .nav').onePageNav({
+                        currentClass: 'active',
+                        scrollSpeed: 1000,
+                        easing: 'easeInOutQuart'
+                    });
+                }
+        
+                /*====================================
+                // Sticky JS
+                ======================================*/ 
+                $(window).on('scroll', function() {
+                    if ($(this).scrollTop() > 1) {
+                        $('#header').addClass("sticky");
+                    } else {
+                        $('#header').removeClass("sticky");
+                    }
+                });
+        
+                /*====================================
+                // 	Social JS
+                ======================================*/ 	
+                $('.social-icon li a').on( "click", function(){
+                    $('.social').toggleClass('active');
+                });
+                
+                /*====================================
+                // 	Mobile Menu
+                ======================================*/
+                     
+                $('.menu').slicknav({
+                    prependTo:".mobile-nav",
+                });
+                
+                /*====================================
+                // Isotop Active
+                ======================================*/
+                // $(window).on('load', function() {
+                    Maheraz_Custom_JS();		
+                    
+                    if ($.fn.isotope) {
+                        $(".isotop-active").isotope({
+                            filter: '*',
+                        });
+                            $('.portfolio-nav ul li').on('click', function() {
+                            $(".portfolio-nav ul li").removeClass("active");
+                            $(this).addClass("active");
+        
+                            var selector = $(this).attr('data-filter');
+                            $(".isotop-active").isotope({
+                                filter: selector,
+                                animationOptions: {
+                                    duration: 750,
+                                    easing: 'easeInOutQuart',
+                                    queue: false,
+                                }
+                            });
+                            return false;
+                        });
+                    }
+                // });
+                
+                
+                /*====================================
+                // Blog Carousel
+                ======================================*/ 	
+                $(".blog-carousel").owlCarousel({
+                    loop:true,
+                    autoplay:false,
+                    autoplayTimeout:4000,
+                    smartSpeed: 600,
+                    margin:15,
+                    nav:false,
+                    dots:true,
+                    responsive:{
+                        300: {
+                            items: 1,
+                        },
+                        480: {
+                            items: 1,
+                        },
+                        768: {
+                            items: 2,
+                        },
+                        1170: {
+                            items: 3,
+                        },
+                    }
+                });	
+                
+                /*====================================
+                // Blog Slider
+                ======================================*/ 	
+                $("#blog .slide").owlCarousel({
+                    loop:true,
+                    autoplay:true,
+                    autoplayTimeout:3500,
+                    smartSpeed: 600,
+                    mouseDrag: true,
+                    nav:true,
+                    navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+                    dots:true,
+                    responsive:{
+                        320: {
+                            items: 1,
+                            dots:false,
+                            nav:false,
+                        },
+                        480: {
+                            items: 1,
+                            dots:false,
+                            nav:false,
+                        },
+                        768: {
+                            items: 1,
+                        },
+                        1170: {
+                            items: 1,
+                        },
+                    }
+                });	
+                
+                
+                /*====================================
+                // clients Carousel
+                ======================================*/ 	
+                $(".clients-slider").owlCarousel({
+                    loop:true,
+                    autoplay:false,
+                    smartSpeed: 600,
+                    margin:30,
+                    nav:false,
+                    dots:false,
+                    responsive:{
+                        300: {
+                            items: 1,
+                        },
+                        480: {
+                            items: 2,
+                        },
+                        768: {
+                            items: 3,
+                        },
+                        1170: {
+                            items: 5,
+                        },
+                    }
+                });	
+                
+                /*====================================
+                    Wow JS
+                ======================================*/		
+                var window_width = $(window).width();   
+                    if(window_width > 767){
+                    new WOW().init();
+                }
+                
+                /*======================================
+                // Parallax JS
+                ======================================*/ 
+                 $(window).stellar({
+                    responsive: true,
+                    positionProperty: 'position',
+                    horizontalScrolling: false
+                });
+                
+                
+                /*====================================
+                // 	Side Navigation
+                ======================================*/ 	
+                $('.side-icon a').on( "click", function(){
+                    $('#header').toggleClass('active');
+                });
+                
+                /*====================================
+                // Personal Slider
+                ======================================*/ 	
+                $(".personal-main.slide").owlCarousel({
+                    loop:true,
+                    autoplay:true,
+                    animateIn: 'fadeIn',
+                    animateOut: 'fadeOut',
+                    smartSpeed: 600,
+                    autoplayTimeout:4000,
+                    mouseDrag: false,
+                    margin:30,
+                    nav:false,
+                    dots:true,
+                    items: 1,
+                });	
+                
+                /*====================================
+                // Portfolio Single
+                ======================================*/ 	
+                $(".portfolio-single.slider").owlCarousel({
+                    loop:true,
+                    autoplay:true,
+                    smartSpeed: 600,
+                    autoplayTimeout:3500,
+                    mouseDrag: true,
+                    margin:30,
+                    nav:true,
+                    navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+                    dots:false,
+                    items: 1,
+                });	
+                
+                /*====================================
+                // Related Portfolio
+                ======================================*/ 
+                $(".portfolio-related").owlCarousel({
+                    loop:true,
+                    autoplay:true,
+                    smartSpeed: 600,
+                    autoplayTimeout:3500,
+                    mouseDrag: true,
+                    nav:false,
+                    dots:false,
+                    items: 1,
+                    responsive:{
+                        300: {
+                            items: 1,
+                        },
+                        480: {
+                            items: 1,
+                        },
+                        768: {
+                            items: 2,
+                        },
+                        1170: {
+                            items: 3,
+                        },
+                    }
+                });	
+        
+                
+                /*====================================
+                Extra JS
+                ======================================*/
+                $('.arrow a').on('click', function(event) {
+                    var $anchor = $(this);
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top - 20 
+                    }, 1000, 'easeInOutQuart');
+                    event.preventDefault();
+                });
+                
+            // });
+            
+            /*======================================
+            // Preloader
+            ======================================*/ 	
+                $(window).on("load",function(){
+                        $('.loader').fadeOut('slow', function(){
+                        $(this).remove();
+                    });
+                });
+        
+        
+        // })(jQuery);	
+    } 
 }
 
 export default Main;

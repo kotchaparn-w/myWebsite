@@ -3,11 +3,8 @@ import React, { Component } from "react";
 
 // Create className 
 class Contact extends Component {
-    constructor(props){
-        super(props)
-    }
+    
     render(){
-        if(this.props.mainComponent == "contact"){
             return(
                 <section id="contact" className="section">
                     <div className="container">
@@ -85,9 +82,6 @@ class Contact extends Component {
                     </div>
                 </section>
             )
-        } else {
-            return(<div/>)
-        }
     }
 }
 

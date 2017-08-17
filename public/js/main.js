@@ -24,6 +24,24 @@
 				easing: 'easeInOutQuart'
 			});
 		}
+
+		/*====================================
+        // Sticky JS
+        ======================================*/ 
+        $(window).on('scroll', function() {
+            if ($(this).scrollTop() > 1) {
+                $('#header').addClass("sticky");
+            } else {
+                $('#header').removeClass("sticky");
+            }
+        });
+
+        /*====================================
+        // 	Social JS
+        ======================================*/ 	
+        $('.social-icon li a').on( "click", function(){
+            $('.social').toggleClass('active');
+        });
 		
 		/*====================================
 		// 	Mobile Menu
@@ -256,4 +274,6 @@
 				$(this).remove();
 			});
 		});
+
+
 })(jQuery);	

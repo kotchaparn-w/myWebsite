@@ -6,12 +6,8 @@ import Skill from "./grandchildren/Skill";
 
 // Create Aboutme className
 class AboutMe extends Component {
-    constructor(props){
-        super(props) 
-    }
 
     render(){
-        if(this.props.mainComponent == "main"){
         return(
             //  Start About Me
             <section id="about-me" className="section default">
@@ -68,9 +64,6 @@ class AboutMe extends Component {
                 </div>
             </section>	
         )
-        } else {
-            return(<div/>)
-        }
     }
 }
 

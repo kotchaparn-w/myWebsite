@@ -3,12 +3,8 @@ import React, { Component } from "react";
 
 // Create Timeline className
 class Timeline extends Component {
-    constructor(props){
-        super(props)
-    }
     
     render(){
-        if(this.props.mainComponent == "timeline"){
             return(
                 <section id="my-timeline" className="section clearfix">
                     <div className="container">
@@ -96,9 +92,6 @@ class Timeline extends Component {
                     </div>
                 </section>
             )
-        }else{
-            return(<div/>)
-        }
     }
 }
 

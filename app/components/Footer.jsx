@@ -9,17 +9,17 @@ class Footer extends Component {
 	}
 
 	assignHref(){
-		switch (this.props.mainComponent){
-			case "main":
+		switch (this.props.location){
+			case "/":
 				return "#personal-area";
 				break;
-			case "portfolio":
+			case "/portfolio":
 				return "#portfolio";
 				break;
-			case "timeline":
+			case "/timeline":
 				return "#my-timeline";
 				break;
-			case "contact":
+			case "/contact":
 				return "#contact";
 				break;
 			default:

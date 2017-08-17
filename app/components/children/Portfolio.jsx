@@ -3,12 +3,8 @@ import React, { Component } from "react";
 
 // Create Portfolio class
 class Portfolio extends Component {
-	constructor(props){
-		super(props)
-	}
 
     render(){
-		if(this.props.mainComponent == "portfolio"){
         return(
             <section id="portfolio" className="section">
 			<div className="container-fluid">
@@ -113,9 +109,6 @@ class Portfolio extends Component {
 			</div>
 		</section>
 		)
-		} else {
-			return(<div/>)
-		}
     }
 }
 
