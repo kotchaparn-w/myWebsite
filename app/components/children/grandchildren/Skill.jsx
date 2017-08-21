@@ -10,10 +10,10 @@ class Skill extends Component {
                     {/* Single Skill  */}
                     <div className="single-skill">
                         <div className="skill-info">
-                            <h4>Web Design</h4>
+                            <h4>UX/UI Design | Responsive Design</h4>
                         </div>
                         <div className="progress">
-                        <div className="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style={style.progress1}><span>55%</span></div>
+                        <div className="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style={style.progress1}><span>90%</span></div>
                         </div>
                     </div>
                 </div>
@@ -22,10 +22,10 @@ class Skill extends Component {
                     {/* Single Skill */}
                     <div className="single-skill">
                         <div className="skill-info">
-                            <h4>Web Development</h4>
+                            <h4>Web Development | SEO | Google Adwords</h4>
                         </div>
                         <div className="progress">
-                        <div className="progress-bar" role="progressbar" aria-valuenow="79" aria-valuemin="0" aria-valuemax="100" style={style.progress2}><span>79%</span></div>
+                        <div className="progress-bar" role="progressbar" aria-valuenow="79" aria-valuemin="0" aria-valuemax="100" style={style.progress2}><span>95%</span></div>
                         </div>
                     </div>
                 </div>
@@ -34,10 +34,10 @@ class Skill extends Component {
                     {/* Single Skill  */}
                     <div className="single-skill">
                         <div className="skill-info">
-                            <h4>PSD To Html</h4>
+                            <h4>HTML5 | CSS3 | JavaScript(ES6) | JQuery</h4>
                         </div>
                         <div className="progress">
-                        <div className="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style={style.progress3}><span>80%</span></div>
+                        <div className="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style={style.progress3}><span>98%</span></div>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@ class Skill extends Component {
                     {/* Single Skill  */}
                     <div className="single-skill">
                         <div className="skill-info">
-                            <h4>UI/UX Design</h4>
+                            <h4>MERN Stack (Mongo | ExpressJs | ReactJs | NodeJs)</h4>
                         </div>
                         <div className="progress">
                         <div className="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style={style.progress4}><span>95%</span></div>
@@ -58,10 +58,10 @@ class Skill extends Component {
                     {/* Single Skill  */}
                     <div className="single-skill">
                         <div className="skill-info">
-                            <h4>HTML5/CSS3</h4>
+                            <h4>Bootstrap | Materialize </h4>
                         </div>
                         <div className="progress">
-                        <div className="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style={style.progress5}><span>70%</span></div>
+                        <div className="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style={style.progress5}><span>97%</span></div>
                         </div>
                     </div>
                 </div>
@@ -70,10 +70,10 @@ class Skill extends Component {
                     {/* Single Skill */}
                     <div className="single-skill">
                         <div className="skill-info">
-                            <h4>Wordpress</h4>
+                            <h4>MySQL | Firebase (Real-Time Database)</h4>
                         </div>
                         <div className="progress">
-                        <div className="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style={style.progress6}><span>65%</span></div>
+                        <div className="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style={style.progress6}><span>91%</span></div>
                         </div>
                     </div>
                 </div>
@@ -82,10 +82,10 @@ class Skill extends Component {
                     {/* Single Skill  */}
                     <div className="single-skill">
                         <div className="skill-info">
-                            <h4>Web Design</h4>
+                            <h4>MVC | ORM</h4>
                         </div>
                         <div className="progress">
-                        <div className="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style={style.progress7}><span>55%</span></div>
+                        <div className="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style={style.progress7}><span>90%</span></div>
                         </div>
                     </div>
                 </div>
@@ -94,10 +94,10 @@ class Skill extends Component {
                     {/* Single Skill  */}
                     <div className="single-skill">
                         <div className="skill-info">
-                            <h4>Web Development</h4>
+                            <h4>Restful API | JSON | XML | AJAX</h4>
                         </div>
                         <div className="progress">
-                        <div className="progress-bar" role="progressbar" aria-valuenow="79" aria-valuemin="0" aria-valuemax="100" style={style.progress8}><span>79%</span></div>
+                        <div className="progress-bar" role="progressbar" aria-valuenow="79" aria-valuemin="0" aria-valuemax="100" style={style.progress8}><span>99%</span></div>
                         </div>
                     </div>
                 </div>
@@ -108,13 +108,13 @@ class Skill extends Component {
 
 const style = {
     progress1: {
-        width: "50%"
+        width: "90%"
     },
     progress2: {
-        width: "79%"
+        width: "95%"
     },
     progress3: {
-        width: "80%"
+        width: "98%"
     },
 
     progress4: {
@@ -122,19 +122,19 @@ const style = {
     },
 
     progress5: {
-        width: "70%"
+        width: "97%"
     },
 
     progress6: {
-        width: "65%"
+        width: "91%"
     },
 
     progress7: {
-        width: "55%"
+        width: "90%"
     },
 
     progress8: {
-        width: "79%"
+        width: "99%"
     }
 
 }

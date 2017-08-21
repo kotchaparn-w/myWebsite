@@ -44,8 +44,15 @@ class AboutMe extends Component {
                                                 {/* End About Image */}
                                                 <div className="col-md-8 col-sm-12 col-xs-12">
                                                     <div className="content">
-                                                        <p>Welcome to my website. sit amet, consectetur adipiscing elit. Ut a lectus eu leo faucibus aliquam. Suspendisse eleifend fringilla nibh. Praesent ut luctus dolor. Suspendisse a rutrum arcu. Aliquam erat volutpat. Phasellus lobortis erat vitae fringilla malesuada. Fusce semper purus suscipit ultricies tincidunt. Nulla eget turpis ac leo euismod pharetra at nec diam. Etiam id purus lacus. Suspendisse ligula nulla, cursus non lacinia tincidunt, elementum eu sapien. Morbi mollis congue fringilla. Vivamus ac sagittis nunc.</p>
-                                                        <p>Welcome to my website. sit amet, consectetur adipiscing elit. Ut a lectus eu leo faucibus aliquam. Suspendisse eleifend fringilla nibh. Praesent ut luctus dolor. Suspendisse a rutrum arcu. Aliquam erat volutpat. Phasellus lobortis erat vitae fringilla malesuada. Fusce semper</p>
+                                                        <p>
+                                                            Thank you for visiting and welcome my website. My international name is "Bell".<br/>
+                                                            I am a biligual (Thai, Eng) Full-Stack web developer. I have been in United States since November 2015 from the beautiful country of "Thailand".<br/>
+                                                            Coming to America helped me change my thoughts on many things, but most importantly it helped make my dream come true, which is becoming a web and software developer.
+                                                        </p>
+                                                        <p>
+                                                            I'm currently working part-time as a freelancer, creating web applications and launching campaigns for companies. 
+                                                            I am obsessed with getting work done flawlessly and driving business to success. 
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>

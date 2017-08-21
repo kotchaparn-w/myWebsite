@@ -40,15 +40,15 @@ class Footer extends Component {
 					<div className="col-md-6 col-sm-6 col-xs-12">
 						{/* <!-- Copyright --> */}
 						<div className="copyright">
-							<p>&copy; Copyright 2017 Kotchaparn Wongkor.</p>
+							<p>&copy; Copyright 2017 Kotchaparn Wongkor</p>
 						</div>
 					</div>
 					<div className="col-md-6 col-sm-6 col-xs-12">
 						{/* <!-- Social --> */}
 						<ul className="social">
-							<li><a href="#"><i className="fa fa-linkedin"></i></a></li>
-							<li><a href="#"><i className="fa fa-github"></i></a></li>
-							<li><a href="#"><i className="fa fa-envelope"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/kotchaparn-wongkor "><i className="fa fa-linkedin"></i></a></li>
+							<li><a href="https://github.com/kotchaparn-w"><i className="fa fa-github"></i></a></li>
+							<li><a href="mailto:kotchaparn.w@gmail.com"><i className="fa fa-envelope"></i></a></li>
 						</ul>
 					</div>
 				</div>

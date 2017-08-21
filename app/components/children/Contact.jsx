@@ -3,7 +3,9 @@ import React, { Component } from "react";
 
 // Create className 
 class Contact extends Component {
-    
+    componentDidMount(){
+		new WOW().init();
+	}
     render(){
             return(
                 <section id="contact" className="section">
@@ -12,7 +14,6 @@ class Contact extends Component {
                             <div className="col-md-12 col-sm-12 col-xs-12">
                                 <div className="section-title">
                                     <h1><span>Contact</span> Me<i className="fa fa-star"></i></h1>
-                                    <p>ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classNameical Latin literature from 45 BC, making it over 2000 years old</p>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +54,7 @@ class Contact extends Component {
                                         <i className="fa fa-phone"></i> 
                                         <div className="title">
                                             <h4>My Phone</h4>
-                                            <p>+1-202-555-0100,<br/>+441632960431</p>
+                                            <p>+1-346-221-8709</p>
                                         </div>
                                     </div>
                                     {/* <!--/ End Single Address --> */}
@@ -62,7 +63,7 @@ class Contact extends Component {
                                         <i className="fa fa-envelope"></i> 
                                         <div className="title">
                                             <h4>Email Address</h4>
-                                            <p>contact@muntasir.com,<br/>info@muntasir.com</p>
+                                            <p><a href="mailto:kotchaparn.w@gmail.com">kotchaparn.w@gmail.com</a></p>
                                         </div>
                                     </div>
                                     {/* <!--/ End Single Address --> */}
@@ -71,7 +72,7 @@ class Contact extends Component {
                                         <i className="fa fa-map"></i> 
                                         <div className="title">
                                             <h4>My Location</h4>
-                                            <p>24/8 Dokkhin Khan, <br/>Uttara Dhaka Bangladesh</p>
+                                            <p>Houston, TX <br/>United States</p>
                                         </div>
                                     </div>
                                     {/* <!--/ End Single Address --> */}

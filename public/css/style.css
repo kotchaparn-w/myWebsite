@@ -364,7 +364,7 @@
 	Personal CSS
 =========================*/  
 #personal-area {
-	background-image: url('http://via.placeholder.com/1500x800');
+	/* background-image: url('http://via.placeholder.com/1500x800'); */
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 680px;
@@ -913,6 +913,7 @@
 /*=======================
     Portfolio CSS
 =========================*/
+
 #portfolio {
 	background: #fff;
 	overflow: hidden;
@@ -1054,6 +1055,7 @@
 #portfolio .portfolio-head img{
 	width:100%;
 	z-index:10;
+	height: 280px;;
 }
 #portfolio .portfolio-single:hover img{
 	transform:scale(1.1);
@@ -2558,7 +2560,7 @@
 	padding: 200px 0 70px;
 	background: #F8F8F8;
 	border-top: 3px solid;
-	background: url('http://via.placeholder.com/1500x800');
+	background: url('../img/bell_bg.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;

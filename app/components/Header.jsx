@@ -18,7 +18,7 @@ class Header extends Component {
                         <div className="col-md-3 col-sm-12 col-xs-12">
                             {/* <!-- Logo --> */}
                             <div className="logo">
-                                <a id="name" href="/"><span>&lt;</span> Kotchaparn Wongkor<span>	/&gt;</span></a>
+                                <a id="name" href="/"><span>&lt;</span>Kotchaparn Wongkor<span>	/&gt;</span></a>
                             </div>
                             {/* <!--/ End Logo --> */}
                             <div className="mobile-nav"></div>
@@ -42,9 +42,9 @@ class Header extends Component {
                                             <li><a href="#header"><i className="fa fa-plus"></i></a></li>
                                         </ul>
                                         <ul className="social">
-                                            <li><a href="#"><i className="fa fa-linkedin"></i></a></li>
-                                            <li><a href="#"><i className="fa fa-github"></i></a></li>
-                                            <li><a href="#"><i className="fa fa-envelope"></i></a></li>
+                                            <li><a href="https://www.linkedin.com/in/kotchaparn-wongkor"><i className="fa fa-linkedin"></i></a></li>
+                                            <li><a href="https://github.com/kotchaparn-w"><i className="fa fa-github"></i></a></li>
+                                            <li><a href="mailto:kotchaparn.w@gmail.com"><i className="fa fa-envelope"></i></a></li>
                                         </ul>
                                     </div>
                                 </nav>

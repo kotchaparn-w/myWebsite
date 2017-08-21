@@ -4,6 +4,10 @@ import React, { Component } from "react";
 // Create Timeline className
 class Timeline extends Component {
     
+    componentDidMount(){
+        
+        new WOW().init();
+	}
     render(){
             return(
                 <section id="my-timeline" className="section clearfix">
@@ -12,7 +16,6 @@ class Timeline extends Component {
                             <div className="col-md-12 col-sm-12 col-xs-12">
                                 <div className="section-title">
                                     <h1><span>Work & </span>Education<i className="fa fa-history"></i></h1>
-                                    <p>ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classNameical Latin literature from 45 BC, making it over 2000 years old</p>
                                 </div>
                             </div>
                         </div>
@@ -25,10 +28,10 @@ class Timeline extends Component {
                                             <div className="single-timeline">
                                                 <div className="single-content">
                                                     <div className="date">
-                                                        <p>Jan<span>10</span></p>
+                                                        <p>Mar<span>11</span></p>
                                                     </div>
-                                                    <h2>High School Degree</h2>
-                                                    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam efficitur ultricies elit, eget ullamcorper enim scelerisque sit amet. Pellentesque blandit venenatis rhoncus.</p>
+                                                    <h2>Bachelor's degree </h2>
+                                                    <p>Graduated from Khon Kaen University, Thailand in International Business field.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -38,10 +41,10 @@ class Timeline extends Component {
                                             <div className="single-timeline">
                                                 <div className="single-content">
                                                     <div className="date">
-                                                        <p>Dec<span>12</span></p>
+                                                        <p>Apr<span>11</span></p>
                                                     </div>
-                                                    <h2>Start Web Design</h2>
-                                                    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam efficitur ultricies elit, eget ullamcorper enim scelerisque sit amet. Pellentesque blandit venenatis rhoncus.</p>
+                                                    <h2>Start Profession</h2>
+                                                    <p>Worked with an international shipping company <br/><a href="http://www.oocl.com/thailand/eng/Pages/default.aspx">(OOCL Thailand Ltc.)</a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -51,10 +54,10 @@ class Timeline extends Component {
                                             <div className="single-timeline">
                                                 <div className="single-content">
                                                     <div className="date">
-                                                        <p>Jan<span>13</span></p>
+                                                        <p>Jan<span>12</span></p>
                                                     </div>
-                                                    <h2>Join University</h2>
-                                                    <p>Starting College DayInterdum et malesuada fames ac ante ipsum primis in faucibus. Etiam efficitur ultricies elit, eget ullamcorper enim scelerisque sit amet. Pellentesque blandit venenatis rhoncus.</p>
+                                                    <h2>Change to I.T. Field</h2>
+                                                    <p>Worked for an I.T. company <a href="http://www.itsolution.co.th/">(I.T. Solution Computer (Thailand) Co., Ltd)</a> as 3 different roles Purchase, Inventory and Marketing Manager</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -64,10 +67,23 @@ class Timeline extends Component {
                                             <div className="single-timeline">
                                                 <div className="single-content">
                                                     <div className="date">
-                                                        <p>Feb<span>16</span></p>
+                                                        <p>Nov<span>15</span></p>
                                                     </div>
-                                                    <h2>Start Web Developments</h2>
-                                                    <p>Learn Web Developments Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam efficitur ultricies elit, eget ullamcorper enim scelerisque sit amet. Pellentesque blandit venenatis rhoncus.</p>
+                                                    <h2>Move to U.S.</h2>
+                                                    <p>Moved to Houston, TX</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* <!--/ End Single Timeline --> */}
+                                         {/* <!-- Single Timeline --> */}
+                                         <div className="single-main wow fadeInLeft" data-wow-delay="0.4s">
+                                            <div className="single-timeline">
+                                                <div className="single-content">
+                                                    <div className="date">
+                                                        <p>Feb<span>17</span></p>
+                                                    </div>
+                                                    <h2>Start Web Development</h2>
+                                                    <p>Certificate, The Houston Coding Boot Camp – Full Stack Flex Program, The University of Texas at Austin – Center for Professional Education in Houston, TX.  </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -77,10 +93,10 @@ class Timeline extends Component {
                                             <div className="single-timeline">
                                                 <div className="single-content">
                                                     <div className="date">
-                                                        <p>Jan<span>17</span></p>
+                                                        <p>May<span>17</span></p>
                                                     </div>
-                                                    <h2>Complete Graduations</h2>
-                                                    <p>Just Receive my Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam efficitur ultricies elit, eget ullamcorper enim scelerisque sit amet. Pellentesque blandit venenatis rhoncus.</p>
+                                                    <h2>Start Freelance</h2>
+                                                    <p>While I was taking class with Houston Coding Boot Camp, I decided to change my carreer to work as a web developer help businesses achieve thier goals. </p>
                                                 </div>
                                             </div>
                                         </div>
