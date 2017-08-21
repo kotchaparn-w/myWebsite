@@ -13,11 +13,14 @@ class Main extends Component {
     }
 
     componentDidMount(){
-        this.loadScript();
+		this.loadScript();
+		$.getScript("js/slickNav-config.js");
+
     }
 
     componentDidUpdate(){
-        this.loadScript();
+		this.loadScript();
+		$.getScript("js/slickNav-config.js");
     }
     render(){  
             return(
@@ -30,10 +33,6 @@ class Main extends Component {
     } 
 
     loadScript(){
-        // 	Mobile Menu
-        $('.menu').slicknav({
-			prependTo:".mobile-nav",
-        });
         
         // Sticky JS
         $(window).on('scroll', function() {

@@ -1,4 +1,5 @@
 var path = require("path");
+const webpack = require('webpack');
 
 module.exports = {
 
@@ -9,7 +10,7 @@ module.exports = {
 
   // The plain compiled JavaScript will be output into this file
   output: {
-    // path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "public"),
     filename: "bundle.js",
     publicPath: "/js/"
   },
@@ -33,8 +34,15 @@ module.exports = {
         exclude: /node_modules/,
         query: {
           // These are the specific transformations we'll be using.
-          presets: ["react", "es2015"]
-        }
+          presets: ["react", "es2015"],
+          // {
+            "env": {
+              "production": {
+                "presets": ["minify"]
+              }
+            }
+          }
+        // }
       }
     ]
   },
@@ -44,5 +52,6 @@ module.exports = {
   },
   // This lets us debug our react code in chrome dev tools. Errors will have lines and file names
   // Without this the console says all errors are coming from just coming from bundle.js
-  devtool: "eval-source-map"
+  // devtool: "eval-source-map"
+  devtool:"cheap-module-source-map"
 };

@@ -504,12 +504,18 @@
 	content: "";
 	z-index: -2;
 }
-#personal-area #particles-js {
+canvas{
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	z-index: 6;
 }
+/* #personal-area #particles-js {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 6;
+} */
 #personal-area.particle .personal-single {
 	z-index: 99;
 }

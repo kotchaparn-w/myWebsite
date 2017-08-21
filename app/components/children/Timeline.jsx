@@ -5,8 +5,8 @@ import React, { Component } from "react";
 class Timeline extends Component {
     
     componentDidMount(){
+        $.getScript("js/wow-config.js");
         
-        new WOW().init();
 	}
     render(){
             return(
@@ -89,7 +89,7 @@ class Timeline extends Component {
                                         </div>
                                         {/* <!--/ End Single Timeline --> */}
                                         {/* <!-- Single Timeline --> */}
-                                        <div className="single-main wow fadeInLeft" data-wow-delay="0.4s">
+                                        <div className="single-main wow fadeInRight" data-wow-delay="0.4s">
                                             <div className="single-timeline">
                                                 <div className="single-content">
                                                     <div className="date">
