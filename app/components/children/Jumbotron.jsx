@@ -61,6 +61,7 @@ class Jumbotron extends Component {
 			);
 	}
 
+	// animate config
 	animateScript(){
 		//set animation timing
 		var animationDelay = 2500,
@@ -217,6 +218,7 @@ class Jumbotron extends Component {
 		}
 }
 
+// Isotope config
 const particles ={
 	"particles": {
 	"number": {

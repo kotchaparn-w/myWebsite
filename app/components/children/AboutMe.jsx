@@ -45,13 +45,13 @@ class AboutMe extends Component {
                                                 <div className="col-md-8 col-sm-12 col-xs-12">
                                                     <div className="content">
                                                         <p>
-                                                            Thank you for visiting and welcome my website. My international name is "Bell".<br/>
-                                                            I am a biligual (Thai, Eng) Full-Stack web developer. I have been in United States since November 2015 from the beautiful country of "Thailand".<br/>
-                                                            Coming to America helped me change my thoughts on many things, but most importantly it helped make my dream come true, which is becoming a web and software developer.
+                                                            Thank you for visiting and welcome to my website. My international name is "Bell".<br/>
+                                                            I am a biligual (Thai, Eng) Full-Stack web developer. I have been in the United States since November 2015 originating from the beautiful country of "Thailand".<br/>
+                                                            Coming to America helped me change my thoughts on many things, but most importantly it helped make my dream come true. Now I became a competent web and software developer.
                                                         </p>
                                                         <p>
                                                             I'm currently working part-time as a freelancer, creating web applications and launching campaigns for companies. 
-                                                            I am obsessed with getting work done flawlessly and driving business to success. 
+                                                            I am obsessed with getting work done flawlessly and driving your business to success. 
                                                         </p>
                                                     </div>
                                                 </div>
