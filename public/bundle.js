@@ -25860,6 +25860,7 @@ var Main = function (_Component) {
             this.loadScript();
             this.slickNav();
             $.getScript("js/slickNav-config.js");
+            $('.wrapper').addClass('loaded');
         }
     }, {
         key: "componentDidUpdate",

@@ -1368,7 +1368,7 @@ canvas{
 }
 #my-timeline .timeline-inner:before{
 	content: "";
-	*/-webkit-border-radius: 2px;
+	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	margin-left: -2px;
@@ -1669,7 +1669,7 @@ canvas{
 #testimonials .rating li{
 	display:inline-block;
 }
-#testimonials .owl-nav{}
+/* #testimonials .owl-nav{} */
 #testimonials .owl-nav div {
 	position: absolute;
 	top: 50%;
@@ -2117,7 +2117,7 @@ canvas{
 	border-radius:100%;
 	display:inline-block;
 	text-align:center;
-	float:right;
+	/* float:right; */
 	color:#fff;
 	font-size:13px;
 }
@@ -2156,7 +2156,7 @@ canvas{
 	position: relative;
 	float: left;
 }
-#blog.single .prev-next ul{}
+/* #blog.single .prev-next ul{} */
 #blog.single .prev-next ul li {
 	left: 0;
 	display: inline-block;

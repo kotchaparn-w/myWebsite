@@ -60,6 +60,8 @@
 
     <!--Color  -->
     <link rel="stylesheet" href="css/color2.css"> 
+    <!--Color  -->
+    <link rel="stylesheet" href="css/preloader.css">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet"> 
@@ -105,7 +107,7 @@
     <!-- Modernizr JS -->
     <script src="js/modernizr.min.js"></script>
     <!-- Google Analytics -->
-    <script>
+    <!-- <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -114,15 +116,21 @@
         ga('create', 'UA-105134413-1', 'auto');
         ga('send', 'pageview');
       
-      </script>
+      </script> -->
     
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="wrapper">
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>     
+        </div>
         <!--Main react application  -->
          <main id="app"></main> 
-    
+    </div>
     <!-- Bundle JS -->
     <script src="bundle.js"></script>
-    <!-- <script src="js/particle-app.js"></script> -->
 </body>
 </html>

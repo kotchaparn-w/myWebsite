@@ -16,8 +16,8 @@ class Main extends Component {
     componentDidMount(){
         this.loadScript();
         this.slickNav();
-		$.getScript("js/slickNav-config.js");
-
+        $.getScript("js/slickNav-config.js");
+        $('.wrapper').addClass('loaded');
     }
 
     componentDidUpdate(){
