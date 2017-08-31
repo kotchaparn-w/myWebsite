@@ -4,7 +4,7 @@ import React, { Component } from "react";
 // Create className 
 class Contact extends Component {
     componentDidMount(){
-		$.getScript("js/wow-config.js");
+        $.getScript("js/wow-config.js");
 	}
     render(){
             return(

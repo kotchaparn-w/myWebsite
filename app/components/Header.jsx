@@ -30,7 +30,7 @@ class Header extends Component {
                                     <div className="collapse navbar-collapse">
                                         <ul className="nav navbar-nav menu">
                                             <li className={this.props.location == '/'? "active": ""}>
-                                                <Link to="/"><i className="fa fa-home"></i>Bell's Homepage</Link></li>
+                                                <Link to="/"><i className="fa fa-home"></i>About Me</Link></li>
                                             <li className={this.props.location == '/portfolio'? "active": ""}>
                                                 <Link to="portfolio"><i className="fa fa-briefcase"></i>Portfolio</Link></li>
                                             <li className={this.props.location == '/timeline'? "active": ""}>

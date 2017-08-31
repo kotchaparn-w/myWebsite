@@ -1,4 +1,4 @@
-function Maheraz_Custom_JS() {
+function custom_JS() {
 			var windowS = $(window),
 				windowH = windowS.height(),
 				projecthoverS = $('.portfolio-hover'),
@@ -9,7 +9,7 @@ function Maheraz_Custom_JS() {
 			});
 		}; 
 
-		Maheraz_Custom_JS();	
+		custom_JS();	
 		
 			$('.portfolio-nav ul li').on('click', function() {
 			$(".portfolio-nav ul li").removeClass("active");
