@@ -20,7 +20,7 @@ class Contact extends Component {
                         <div className="row">
                             {/* <!-- Contact Form --> */}
                             <div className="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.4s">
-                                <form className="form" method="post" action="mail/mail.php">
+                                <form className="form" method="post">
                                     <div className="row">
                                         <div className="col-md-6">
                                             <div className="form-group">
@@ -83,6 +83,7 @@ class Contact extends Component {
                     </div>
                 </section>
             )
+            
     }
 }
 
