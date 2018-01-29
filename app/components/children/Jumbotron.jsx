@@ -31,7 +31,7 @@ class Jumbotron extends Component {
 														<div className="my-info">
 															<h1>Kotchaparn <span id="lastname">Wongkor</span></h1>
 															<h2 className="cd-headline clip is-full-width">
-															A Profesional&nbsp;
+															A Professional&nbsp;
 																<span className="cd-words-wrapper">
 																	<b className="is-visible">UI/UX DESIGNER</b>
 																	<b>Full-Stack Web Developer</b>
