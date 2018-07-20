@@ -47,7 +47,7 @@ class Jumbotron extends Component {
 								</div>
 								{/*Arrow  */}
 								<div className="arrow">
-									<a href="#about-me"><i className="f a fa-angle-down"></i></a>
+									<a href="#about-me"><i className="fa fa-angle-down"></i></a>
 								</div>
 							</div>
 						</div>

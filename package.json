@@ -7,7 +7,7 @@
   "author": "kittybellth <kittybell.th@gmail.com>",
   "license": "Bella",
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline --mode=development",
+    "dev": "webpack-dev-server --hot --inline --open --mode=development",
     "build":  "webpack --mode=production"
   },
   "dependencies": {
