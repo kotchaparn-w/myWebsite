@@ -10,20 +10,17 @@ module.exports = {
 
   // The plain compiled JavaScript will be output into this file
   output: {
-    path: path.resolve(__dirname, "public"),
+    path: __dirname + "/public",
     filename: "bundle.js",
-    publicPath: "/js/"
   },
 
-  // This section for deveropment environment
+  // This section for development environment
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    publicPath: "/js/",
-    historyApiFallback: true,
+    contentBase: path.join(__dirname, 'public')
   },
   // This section desribes the transformations we will perform
   module: {
-    loaders: [
+    rules: [
       {
         // Only working with files that in in a .js or .jsx extension
         test: /\.jsx?$/,
