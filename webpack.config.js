@@ -16,7 +16,8 @@ module.exports = {
 
   // This section for development environment
   devServer: {
-    contentBase: path.join(__dirname, 'public')
+    contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true
   },
   // This section desribes the transformations we will perform
   module: {
@@ -31,7 +32,7 @@ module.exports = {
         exclude: /node_modules/,
         query: {
           // These are the specific transformations we'll be using.
-          presets: ["react", "es2015"],
+          presets: ["react", "es2016"],
           // {
             "env": {
               "production": {

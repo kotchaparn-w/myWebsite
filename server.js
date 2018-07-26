@@ -5,7 +5,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
-// const mongoose = require ("mongoose");
+const mongoose = require ("mongoose");
 // const bluebird = require("bluebird");
 const path = require("path");
 
@@ -15,12 +15,12 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 //require routes from routes.js
-// const routes = require("./routes/routes");
+const routes = require("./routes");
 
 //replaced mongoose promises with bluebird library
 // mongoose.Promise = bluebird;
 // Run Morgan for Logging
-app.use(logger("dev"));
+// app.use(logger("dev"));
 
 //Prevent 304 status code
 app.use(function(req, res, next) {
@@ -28,10 +28,10 @@ app.use(function(req, res, next) {
   next();    
 });
 
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.text());
-// app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static(__dirname + '/public'))
 
 // -------------------------------------------------
@@ -42,16 +42,16 @@ app.use(express.static(__dirname + '/public'))
 
 // const db = mongoose.connection;
 
-//   db.on("error", function(err) {
-//     console.log("Mongoose Error: ", err);
-//   });
+  // db.on("error", function(err) {
+  //   console.log("Mongoose Error: ", err);
+  // });
 
-//   db.once("open", function() {
-//     console.log("Mongoose connection successful.");
-//   });
+  // db.once("open", function() {
+  //   console.log("Mongoose connection successful.");
+  // });
 // -------------------------------------------------
 //using routes from routes.js
-// app.use("/", routes);
+routes(app);
 
 // handle every other route with index.html, which will contain
 app.get('*', function (request, response){

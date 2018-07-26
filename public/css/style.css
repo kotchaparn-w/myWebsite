@@ -2715,3 +2715,24 @@ canvas{
 /*=======================
   End Footer
 =========================*/
+
+/*=======================
+  Contact Form
+=========================*/
+#contact .form-group {
+	margin-bottom: 0;
+
+}
+
+input.is-invalid, textarea.is-invalid {
+	border-color: #dc3545 !important;
+}
+.invalid-feedback {
+	font-size: 1.2rem;
+	margin-bottom: 25px;
+    color: #dc3545;
+}
+
+/*=======================
+  End Contact Form
+=========================*/
