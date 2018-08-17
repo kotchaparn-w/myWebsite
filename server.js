@@ -1,5 +1,5 @@
 //require all credentials info
-// require('dotenv').config()
+require('dotenv').config()
 
 // Include Server Dependencies
 const express = require("express");
@@ -37,18 +37,17 @@ app.use(express.static(__dirname + '/public'))
 // -------------------------------------------------
 
 // MongoDB Configuration configuration
-// const promise = mongoose.connect(process.env.MONGODB_URI || process.env.DB_LOCAL, 
-//   {useMongoClient: true});
+const promise = mongoose.connect(process.env.MONGODB_URI || process.env.DB_LOCAL);
 
-// const db = mongoose.connection;
+const db = mongoose.connection;
 
-  // db.on("error", function(err) {
-  //   console.log("Mongoose Error: ", err);
-  // });
+  db.on("error", function(err) {
+    console.log("Mongoose Error: ", err);
+  });
 
-  // db.once("open", function() {
-  //   console.log("Mongoose connection successful.");
-  // });
+  db.once("open", function() {
+    console.log("Mongoose connection successful.");
+  });
 // -------------------------------------------------
 //using routes from routes.js
 routes(app);
