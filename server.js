@@ -37,7 +37,9 @@ app.use(express.static(__dirname + '/public'))
 // -------------------------------------------------
 
 // MongoDB Configuration configuration
-const promise = mongoose.connect(process.env.MONGODB_URI || process.env.DB_LOCAL);
+const mongoURL = process.env.MONGODB_URI || process.env.DB_LOCAL ;
+
+const promise = mongoose.connect(mongoURL , { useNewUrlParser: true });
 
 const db = mongoose.connection;
 
@@ -47,17 +49,18 @@ const db = mongoose.connection;
 
   db.once("open", function() {
     console.log("Mongoose connection successful.");
+    //using routes from routes.js
+    routes(app);
+
+    // handle every other route with index.html, which will contain
+    app.get('*', function (request, response){
+      response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+    })
+
+    // Listener
+    app.listen(PORT, function() {
+      console.log("App listening on PORT: " + PORT);
+    });
+
   });
 // -------------------------------------------------
-//using routes from routes.js
-routes(app);
-
-// handle every other route with index.html, which will contain
-app.get('*', function (request, response){
-  response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
-})
-
-// Listener
-app.listen(PORT, function() {
-  console.log("App listening on PORT: " + PORT);
-});
