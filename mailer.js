@@ -1,5 +1,7 @@
-const nodemailer = require('nodemailer');
 require('dotenv').config();
+const nodemailer = require('nodemailer');
+const mailContent = require('./mailContent/thankYou');
+
 const { EMAIL_USER, EMAIL_CLIENTID, EMAIL_CLIENTSECRET, EMAIL_REFRESHTOKEN, EMAIL_ACCESSTOKEN } = process.env;
 
 module.exports = (details)=> {
@@ -25,9 +27,8 @@ module.exports = (details)=> {
     let mailOptions = {
         from: '"Kotchaparn Wongkor"kotchaparn.w@gmail.com', // sender address
         to: `${details.email}`, // list of receivers
-        subject: 'Thank you for submitting form', // Subject line
-        text: 'Hello world?', // plain text body
-        html: `<b>Dear ${details.name} </b>` // html body
+        subject: 'Thank you for submiiting the form', // Subject line
+        html: mailContent(details) // html body
     };
 
     // send mail with defined transport object
