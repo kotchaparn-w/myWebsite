@@ -3,10 +3,12 @@ const mailer = require("../mail");
 
 module.exports = {
     saveUser: (req, res)=> {
-        console.log(req.body);
-        mailer();
+
+        // sending an email to a user
+        // mailer(req.body);
+
         const user = new User(req.body);
-        // console.log(user);
+
         user.save((err, doc)=> {
             if(err) {
                 console.log(err);

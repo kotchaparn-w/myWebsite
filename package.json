@@ -8,10 +8,11 @@
   "license": "Bella",
   "scripts": {
     "dev": "webpack-dev-server --hot --open --mode=development",
-    "build":  "webpack --mode=production"
+    "build": "webpack --mode=production"
   },
   "dependencies": {
     "express": "^4.15.4",
+    "googleapis": "^27.0.0",
     "morgan": "^1.8.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
