@@ -3,6 +3,7 @@ module.exports = {
     "plugins": [
         "react",
         "jsx-ally",
-        "import"
+        "import",
+        "@babel/plugin-transform-runtime"
     ]
 };

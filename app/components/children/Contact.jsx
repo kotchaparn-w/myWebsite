@@ -1,6 +1,8 @@
 // Include React
 import React, { Component } from "react";
 import axios from 'axios';
+import { AsYouType } from 'libphonenumber-js';
+import PhoneInput from 'react-phone-number-input';
 
 // Create className 
 class Contact extends Component {
@@ -12,6 +14,10 @@ class Contact extends Component {
                 isValid: true
             },
             email: {
+                value: "",
+                isValid: true
+            },
+            phone: {
                 value: "",
                 isValid: true
             },
@@ -28,7 +34,7 @@ class Contact extends Component {
     }
     handleChange(event) {
         const {value, name } = event.target;
-        this.setState({ [name] : Object.assign(this.state[name], { value }) });
+            this.setState({ [name] : Object.assign(this.state[name], { value }) });
     }
 
     handleSubmit(event) {
@@ -50,10 +56,11 @@ class Contact extends Component {
         }
         
         if(!isEmptyFound) {
-            const { name: {value : name}, email : {value : email}, message : {value : message} } = this.state;
+            const { name: {value : name}, email : {value : email}, phone : {value : phone}, message : {value : message} } = this.state;
             axios.post('/contact', {
                 name,
                 email,
+                phone,
                 message
             })
             .then( res => console.log(res))
@@ -63,7 +70,7 @@ class Contact extends Component {
     }
 
     render(){
-        const { name, email, message } = this.state;
+        const { name, email, phone, message } = this.state;
             return(
                 <section id="contact" className="section">
                     <div className="container">
@@ -79,7 +86,7 @@ class Contact extends Component {
                             <div className="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.4s">
                                 <form className="form" >
                                     <div className="row">
-                                        <div className="col-md-6">
+                                        <div className="col-md-12">
                                             <div className="form-group">
                                                 <input 
                                                 className={name.isValid == true ? "" : "is-invalid"}
@@ -108,7 +115,20 @@ class Contact extends Component {
                                             </div>
                                             <div className="invalid-feedback">
                                             { email.isValid == false && 'Please provide a valid email' }
+                                            </div>       
+                                        </div>
+                                        <div className="col-md-6">
+                                            <div className="form-group">
+                                                <input
+                                                placeholder="Your phone number"
+                                                name="phone" 
+                                                value={phone.value}
+                                                onChange={this.handleChange}
+                                                />
                                             </div>
+                                            <div className="invalid-feedback">
+                                            { phone.isValid == false && 'Please provide a valid phone number' }
+                                            </div>       
                                         </div>
                                         <div className="col-md-12">
                                             <div className="form-group">

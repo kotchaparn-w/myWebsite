@@ -32,8 +32,9 @@ module.exports = {
         exclude: /node_modules/,
         query: {
           // These are the specific transformations we'll be using.
-          presets: ["react", "es2016"],
-          // {
+          presets: ['@babel/preset-react', "@babel/preset-env"],
+          plugins: ['@babel/proposal-class-properties'],
+          //{
             "env": {
               "production": {
                 "presets": ["minify"]
@@ -46,7 +47,7 @@ module.exports = {
   },
   // To be able resolve .jsx extension
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.json']
   },
   // This lets us debug our react code in chrome dev tools. Errors will have lines and file names
   // Without this the console says all errors are coming from just coming from bundle.js
