@@ -36,7 +36,9 @@ class Header extends Component {
                                             <li className={this.props.location == '/timeline'? "active": ""}>
                                                 <Link to="timeline"><i className="fa fa-history"></i>Timeline</Link></li>
                                             <li className={this.props.location == '/contact'? "active": ""}>
-                                                <Link to="contact"><i className="fa fa-address-book"></i>Contact</Link></li>	
+                                                <Link to="contact"><i className="fa fa-address-book"></i>Contact</Link></li>
+                                            <li className={this.props.location == '/portal'? "active": ""}>
+                                                <Link to="portal"><i className="fa fa-lock"></i>Portal</Link></li>	
                                         </ul>
                                         <ul className="social-icon">
                                             <li><a href="#header"><i className="fa fa-plus"></i></a></li>

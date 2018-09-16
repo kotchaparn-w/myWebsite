@@ -12,6 +12,7 @@ import Portfolio from "../children/Portfolio";
 import Timeline from "../children/Timeline";
 import Contact from "../children/Contact";
 import MailSuccess from "../children/MailSuccess";
+import Portal from "../children/Portal";
 import ContactBG from "../children/ContactBG";
 import history from "../../history.js";
 
@@ -27,6 +28,7 @@ const routes = (
                 <Route exact path="/contact" component={ContactBG} />
                 <Route exact path="/mailsuccess" component={MailSuccess}/> 
                 <Route exact path="/mailsuccess" component={ContactBG} />
+                <Route path="/portal" component={Portal}/> 
         </Main>
     </Router>
 )

@@ -226,7 +226,7 @@ module.exports = (details)=> {
                           <td class="es-m-txt-l" align="left" style="padding:0;Margin:0;padding-top:20px;padding-left:30px;padding-right:30px;"> 
                           <p>Message: ${message}</p>
                           <p>Email: ${email}</p>
-                          <p>Tel: ${phone}</p>
+                          <p>Phone: ${phone}</p>
                           </td> 
                         </tr> 
                         <tr style="border-collapse:collapse;"> 

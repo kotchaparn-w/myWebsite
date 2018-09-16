@@ -33,7 +33,7 @@ class Footer extends Component {
             <footer id="footer">
 			{/* <!-- Arrow --> */}
 			<div className="arrow">
-				{this.props.location !== "/mailsuccess" &&
+				{this.props.location !== "/mailsuccess" && this.props.location !== "/portal" &&
 					<a href={this.assignHref()} className="btn"><i className="fa fa-angle-up"></i></a>
 				}
 			</div>
