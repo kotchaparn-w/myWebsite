@@ -5,7 +5,7 @@ module.exports = {
     saveUser: (req, res)=> {
 
         // sending an email to a user
-        mailer(req.body);
+        mailer(req.body, res);
 
         // const user = new User(req.body);
 

@@ -1,8 +1,9 @@
 // Include React
 import React, { Component } from "react";
 import axios from 'axios';
-import { AsYouType } from 'libphonenumber-js';
 import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import history from '../../history';
 
 // Create className 
 class Contact extends Component {
@@ -24,7 +25,7 @@ class Contact extends Component {
             message: {
                 value: "",
                 isValid: true
-            }, 
+            }
         }
         this.handleChange = this.handleChange.bind(this);
     }
@@ -34,7 +35,7 @@ class Contact extends Component {
     }
     handleChange(event) {
         const {value, name } = event.target;
-            this.setState({ [name] : Object.assign(this.state[name], { value }) });
+        this.setState({ [name] : Object.assign(this.state[name], { value }) });
     }
 
     handleSubmit(event) {
@@ -63,8 +64,31 @@ class Contact extends Component {
                 phone,
                 message
             })
-            .then( res => console.log(res))
+            .then( res => {
+                if(res.data.success === true){
+                    history.push("/mailsuccess");
+                }
+            })
             .catch( err => console.log(err));
+
+            this.setState({
+            name: {
+                value: "",
+                isValid: true
+            },
+            email: {
+                value: "",
+                isValid: true
+            },
+            phone: {
+                value: "",
+                isValid: true
+            },
+            message: {
+                value: "",
+                isValid: true
+            }
+            });
         }
 
     }
@@ -110,7 +134,7 @@ class Contact extends Component {
                                                 onChange={this.handleChange}
                                                 type="email" 
                                                 name="email" 
-                                                placeholder="Your Email" 
+                                                placeholder="Email" 
                                                 required="required"/>
                                             </div>
                                             <div className="invalid-feedback">
@@ -119,11 +143,14 @@ class Contact extends Component {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-group">
-                                                <input
-                                                placeholder="Your phone number"
+                                                <PhoneInput
+                                                country="US"
+                                                placeholder="Phone number"
                                                 name="phone" 
                                                 value={phone.value}
-                                                onChange={this.handleChange}
+                                                onChange={ phone => 
+                                                    { this.setState({ phone: Object.assign(this.state.phone, { value : phone })}) } 
+                                                } 
                                                 />
                                             </div>
                                             <div className="invalid-feedback">

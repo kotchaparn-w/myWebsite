@@ -4,7 +4,7 @@ const mailContent = require('./mailContent/thankYou');
 
 const { EMAIL_USER, EMAIL_CLIENTID, EMAIL_CLIENTSECRET, EMAIL_REFRESHTOKEN, EMAIL_ACCESSTOKEN } = process.env;
 
-module.exports = (details)=> {
+module.exports = (details, res)=> {
 
     // Generate test SMTP service account from ethereal.email
     // create reusable transporter object using the default SMTP transport
@@ -36,6 +36,6 @@ module.exports = (details)=> {
         if (error) {
             return console.log(error);
         }
-        console.log(info);
+        res.json({success: true});
     });
 }

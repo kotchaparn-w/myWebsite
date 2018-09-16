@@ -23,6 +23,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test:/\.css$/,
+        use:['style-loader','css-loader']
+      },
+      {
         // Only working with files that in in a .js or .jsx extension
         test: /\.jsx?$/,
         // Webpack will only process files in our app folder. This avoids processing

@@ -11,6 +11,7 @@ import AboutMe from "../children/AboutMe";
 import Portfolio from "../children/Portfolio";
 import Timeline from "../children/Timeline";
 import Contact from "../children/Contact";
+import MailSuccess from "../children/MailSuccess";
 import ContactBG from "../children/ContactBG";
 import history from "../../history.js";
 
@@ -24,6 +25,8 @@ const routes = (
                 <Route exact path="/timeline" component={Timeline} />
                 <Route exact path="/contact" component={Contact}/> 
                 <Route exact path="/contact" component={ContactBG} />
+                <Route exact path="/mailsuccess" component={MailSuccess}/> 
+                <Route exact path="/mailsuccess" component={ContactBG} />
         </Main>
     </Router>
 )

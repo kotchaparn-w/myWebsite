@@ -1,6 +1,6 @@
 module.exports = (details)=> {
 
-  const { name, email, message } = details;
+  const { name, email, phone, message } = details;
   
   return (
     `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
@@ -224,8 +224,9 @@ module.exports = (details)=> {
                         </tr> 
                         <tr style="border-collapse:collapse;"> 
                           <td class="es-m-txt-l" align="left" style="padding:0;Margin:0;padding-top:20px;padding-left:30px;padding-right:30px;"> 
-                          <p>${message}</p>
-                          <p>Your email address : ${email}</p>
+                          <p>Message: ${message}</p>
+                          <p>Email: ${email}</p>
+                          <p>Tel: ${phone}</p>
                           </td> 
                         </tr> 
                         <tr style="border-collapse:collapse;"> 
