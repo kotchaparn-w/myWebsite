@@ -37,7 +37,7 @@ app.use(express.static(__dirname + '/public'))
 // -------------------------------------------------
 
 // MongoDB Configuration configuration
-const mongoURL = process.env.MONGODB_URI || process.env.DB_LOCAL ;
+const mongoURL =  process.env.DB_LOCAL || process.env.MONGODB_URI ;
 
 const promise = mongoose.connect(mongoURL , { useNewUrlParser: true });
 
