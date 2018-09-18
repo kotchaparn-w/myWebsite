@@ -12,7 +12,7 @@ module.exports = {
             } else {
                 console.log(doc);
                 // sending an email to a user
-                // mailer(req.body, res);
+                mailer(req.body, res);
             }
         });
     },
