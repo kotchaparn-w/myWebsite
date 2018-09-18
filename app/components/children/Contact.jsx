@@ -62,7 +62,8 @@ class Contact extends Component {
                 name,
                 email,
                 phone,
-                message
+                message,
+                date: Date.now()
             })
             .then( res => {
                 if(res.data.success === true){

@@ -1,6 +1,27 @@
 import React, { Component } from "react";
+import LogIn from './LogIn';
+import Dashboard from './Dashboard';
+import firebase from 'firebase/app';
+import 'firebase/auth'
+import '../config/firebaseConfig.js';
 
 class Portal extends Component {
+
+    constructor(props){
+        super(props)
+        this.state ={
+            authenticated: false
+        }
+    }
+    componentWillMount(){
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                this.setState({ authenticated : true });
+            } else {
+                this.setState({ authenticated : false });
+            }
+        })
+    }
 
     render(){
         return(
@@ -16,27 +37,7 @@ class Portal extends Component {
                         </div>
                     </div>
                 </section>
-
-                <section id="blog" className="section archive single">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-12 col-sm-12 col-xs-12">
-                                <div className="list">
-                                    <div className="row">
-                                        <div className="col-md-12 col-sm-12 col-xs-12">
-                                            {/* <!-- Single Blog --> */}
-                                            <div className="single-blog">
-                                                <div className="blog-head">
-                                                    <img src="http://via.placeholder.com/1200x800" className="img-responsive" />
-                                                </div>
-                                            </div>						
-                                        </div>	
-                                    </div>	
-                                </div>	
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                 {this.state.authenticated == false && <LogIn /> || <Dashboard />}
             </React.Fragment>
         )
     }

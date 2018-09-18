@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const ContactSchema = new Schema({
     name : {
         type: String
     },
@@ -14,9 +14,12 @@ const UserSchema = new Schema({
     },
     message: {
         type: String
+    },
+    date: {
+        type: Date
     }
 });
 
-const User = mongoose.model("User", UserSchema);
+const Contact = mongoose.model("Contact", ContactSchema);
 
-module.exports = User;
+module.exports = Contact;

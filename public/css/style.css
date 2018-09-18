@@ -2524,6 +2524,8 @@ canvas{
   Clients CSS
 =========================*/
 #clients.section {
+	height: 60%;
+    width: 100%;
 	padding: 200px 0 70px;
 	background: #F8F8F8;
 	border-top: 3px solid;
@@ -2740,3 +2742,26 @@ input.is-invalid, textarea.is-invalid {
 #breadcrumbs {
 	margin-top: 60px;
 }
+
+/*=======================
+  Start Portal
+=========================*/
+
+#portal {
+	padding-bottom: 0px;
+}
+
+#log-in {
+	padding-top: 0px;
+	height: 76.5%
+
+}
+
+.form-signin-heading {
+	margin-bottom: 10px;
+}
+
+
+/*=======================
+  End Portal
+=========================*/
