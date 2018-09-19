@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import moment from 'moment';
+import ModalForm from './grandchildren/ModalForm';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -10,8 +11,10 @@ class Dashboard extends Component {
     constructor(props){
         super(props)
         this.state = {
-           contacts: []
+           contacts: [],
+           isModalOpen: false
         }
+        this.toggleModal = this.toggleModal.bind(this);
     }
 
     handleClick(event){
@@ -20,7 +23,7 @@ class Dashboard extends Component {
             console.log("Signed Out");
           }).catch(function(error) {
             console.log(err);
-          });
+        });
     }
 
     componentDidMount(){
@@ -64,6 +67,10 @@ class Dashboard extends Component {
             </table>
         )
     }
+    
+    toggleModal(bool){
+        this.setState({ isModalOpen: bool})
+    }
 
     render() {
         return(
@@ -73,7 +80,7 @@ class Dashboard extends Component {
                             <div className="col-xs-4 col-sm-2 col-xs-offset-6 col-sm-offset-8 col-md-offset-8">
                                 <button 
                                 className="btn btn-lg btn-success"
-                                onClick={this.handleClick.bind(this)}
+                                onClick={() => this.toggleModal(true)}
                                 type="submit">
                                 Upload Projects
                                 </button>
@@ -81,14 +88,14 @@ class Dashboard extends Component {
                             <div className="col-xs-4 col-sm-2">
                                 <button 
                                 className="btn btn-lg btn-danger"
-                                onClick={this.handleClick.bind(this)}
+                                onClick={this.handleClick}
                                 type="submit">
                                 Sign out
                                 </button>
                             </div>
                         </div>
                         <div className="row">
-                            {this.renderContacts()}
+                            {this.state.isModalOpen == false ? this.renderContacts() : <ModalForm toggleModal={this.toggleModal}/>}
                         </div>
                     </div>
                 </section>

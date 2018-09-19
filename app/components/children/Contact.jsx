@@ -66,7 +66,6 @@ class Contact extends Component {
                 date: Date.now()
             })
             .then( res => {
-                console.log( res );
                 if(res.data.success === true){
                     history.push("/mailsuccess");
                 }

@@ -2765,3 +2765,7 @@ input.is-invalid, textarea.is-invalid {
 /*=======================
   End Portal
 =========================*/
+
+.modal {
+	display: block;
+}
