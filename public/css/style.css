@@ -2769,3 +2769,8 @@ input.is-invalid, textarea.is-invalid {
 .modal {
 	display: block;
 }
+
+#addCat, #removeCat{
+	padding: 5px 15px; 
+	margin-left: 3px;
+}

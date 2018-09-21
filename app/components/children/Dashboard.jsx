@@ -12,7 +12,7 @@ class Dashboard extends Component {
         super(props)
         this.state = {
            contacts: [],
-           isModalOpen: false
+           isModalOpen: true
         }
         this.toggleModal = this.toggleModal.bind(this);
     }
