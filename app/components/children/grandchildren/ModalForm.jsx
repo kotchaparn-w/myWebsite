@@ -1,23 +1,67 @@
 import React, { Component } from 'react';
+import firebase from 'firebase/app';
+import 'firebase/storage';
+import '../../config/firebaseConfig.js';
+
+const storageRef = firebase.storage().ref();
 
 class ModalForm extends Component {
     constructor(props){
         super(props)
         this.state={
-            categories:['']
+            categories:[''],
+            image: {
+                name: null,
+                link: null
+            }
         }
+        this.fileInput = React.createRef();
         this.toggleModal = this.toggleModal.bind(this);
-        this.handleCatChange = this.handleCatChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.deletePicPath = this.deletePicPath.bind(this);
     }
 
     toggleModal(){
         this.props.toggleModal(false);
     }
-    handleCatChange(event){
-        const { value, tabIndex } = event.target;
-        let newCatArr = [...this.state.categories];
-        newCatArr[tabIndex] = value;
-        this.setState({ categories:  newCatArr });
+    handleChange(event){
+        const { value, name, tabIndex, files } = event.target;
+        if(name === "category"){
+            let newCatArr = [...this.state.categories];
+            newCatArr[tabIndex] = value;
+            this.setState({ categories:  newCatArr });
+        } else if(name === "imageInput"){
+            if(this.state.image.name !== null){
+                this.deletePicPath()
+            }
+            const file = files[0];
+            let uploadTask = storageRef.child('images/' + file.name).put(file);
+            uploadTask.on('state_changed', snapshot => {
+                var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('Upload is ' + progress + '% done');
+            }, err => {
+                console.log('An error occurs', err)
+            }, ()=> {
+                uploadTask.snapshot.ref.getDownloadURL().then(downloadURL=> {
+                    console.log('File available at', downloadURL);
+                    this.setState({ image: {name: file.name, link: downloadURL }});
+                });
+            });
+        } else {
+            this.setState({ [name] : value });
+        }
+        
+    }
+    deletePicPath(event){
+        event.preventDefault();
+        let desertRef = storageRef.child('images/' + this.state.image.name);
+        // Delete the file
+        desertRef.delete().then(()=> {
+            this.setState({ image: {name: null, link: null }});
+            this.fileInput.current.value = null;
+        }).catch(err=> {
+            console.log("An error occur during delete", err)
+        });
     }
     addNewCat(event){
         event.preventDefault();
@@ -33,7 +77,6 @@ class ModalForm extends Component {
     }
 
     renderCategories(){
-        console.log(this.state);
         return(
             <form className="form-inline">
                 {this.state.categories.map((category, i) => 
@@ -41,7 +84,8 @@ class ModalForm extends Component {
                         <input
                         value={this.state.categories[i]}
                         tabIndex={i}
-                        onChange={this.handleCatChange}
+                        name="category"
+                        onChange={this.handleChange}
                         className="form-control" 
                         />
                         <button 
@@ -64,6 +108,7 @@ class ModalForm extends Component {
     }
 
     render(){
+        console.table(this.state);
         return(
             <React.Fragment>
             <div className="modal fade in" id="modalForm" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel">
@@ -91,6 +136,23 @@ class ModalForm extends Component {
                         </form>
                         <label>categories</label>
                         {this.renderCategories()}
+                        <form className="form-inline">
+                        <div className="form-group">
+                            <label htmlFor="exampleInputFile">File input</label>
+                            <input 
+                                type="file"
+                                name="imageInput"
+                                ref={this.fileInput}
+                                onChange={this.handleChange}/>
+                                
+                        </div>
+                        <button 
+                                type="submit" 
+                                id="removePicPath"
+                                onClick={this.deletePicPath}
+                                className={this.state.image.name !== null? "btn btn-danger" : "btn btn-danger hide"}
+                                >x</button>
+                        </form>
                     </div>
                     <div className="modal-footer">
                         <button 

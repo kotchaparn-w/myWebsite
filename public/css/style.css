@@ -2770,7 +2770,7 @@ input.is-invalid, textarea.is-invalid {
 	display: block;
 }
 
-#addCat, #removeCat{
+#addCat, #removeCat, #removePicPath{
 	padding: 5px 15px; 
 	margin-left: 3px;
 }
