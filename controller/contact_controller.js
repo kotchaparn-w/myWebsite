@@ -15,15 +15,5 @@ module.exports = {
                 mailer(req.body, res);
             }
         });
-    },
-
-    getContact: (req, res)=> {
-        Contact.find({}, (err, contacts)=> {
-            if(err) {
-                return console.log(err);
-            } else {
-                return res.json(contacts);
-            }
-        })
     }
 }

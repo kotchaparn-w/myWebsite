@@ -2770,7 +2770,14 @@ input.is-invalid, textarea.is-invalid {
 	display: block;
 }
 
-#addCat, #removeCat, #removePicPath{
+#addCat, #removeCat, #addFA, #removeFA,#removePicPath{
 	padding: 5px 15px; 
 	margin-left: 3px;
+}
+
+#delete_project {
+	padding: 1px 5px !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    border-radius: 3px !important;
 }

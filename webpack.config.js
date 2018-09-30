@@ -1,11 +1,10 @@
 var path = require("path");
-const webpack = require('webpack');
 
 module.exports = {
 
   // This is the entry point or start of react applicaton
     entry: {
-        app: ["./app/app"]
+        app: ["babel-polyfill", "./app/app"]
       },
 
       // The plain compiled JavaScript will be output into this file
@@ -19,7 +18,7 @@ module.exports = {
         contentBase: path.join(__dirname, 'public'),
         historyApiFallback: true,
         proxy: [{
-          context: ['/dashboard', '/contact'],
+          context: ['/dashboard', '/contact', '/project'],
           target: 'http://localhost:8080',
         }]
       },

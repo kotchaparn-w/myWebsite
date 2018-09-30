@@ -47,7 +47,7 @@ class Portfolio extends Component {
 									</div>
 									<div className="portfolio-hover">
 										<h4><span>Web Design</span><a href="#">My Portfolio</a></h4>
-										<p>A single-page application built on ReactJS gives users utter experience with "react-router".</p>
+										<p>A single-page application built on MERN stack.</p>
 										<div className="button">
 											<a data-fancybox="gallery" href="../img/bell_portfolio.png"><i className="fa fa-search"></i></a>
 											<a href="https://kotchaparnwongkor.me" className="primary"><i className="fa fa-link"></i></a>
