@@ -5,6 +5,7 @@ import ModalForm from './grandchildren/ModalForm';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/storage';
 import '../config/firebaseConfig.js';
 
 class Dashboard extends Component {
@@ -18,6 +19,11 @@ class Dashboard extends Component {
         }
         this.toggleModal = this.toggleModal.bind(this);
         this.swicthMode = this.swicthMode.bind(this);
+        this.getDashBoard = this.getDashBoard.bind(this);
+        this.removeProject = this.removeProject.bind(this);
+    }
+    componentDidMount(){
+        this.getDashBoard()
     }
 
     handleClick(event){
@@ -33,8 +39,28 @@ class Dashboard extends Component {
         const { value } = event.target;
         this.setState({ mode : value });
     }
-
-    componentDidMount(){
+    removeProject(event){
+        const { value, name } = event.target;
+        const storageRef = firebase.storage().ref();
+        let desertRef = storageRef.child('images/' + name);
+            axios.delete('/project/delete', {
+                data: { projectId: value }
+            })
+            .then( res => {
+                if(res.data.success){
+                    desertRef.delete().then(()=> {
+                    }).catch(err=> {
+                        console.log("An error occur during delete", err)
+                    });
+                    this.getDashBoard();
+                }
+            })
+            .catch( err => {
+                console.log(err);
+            })
+        
+    }
+    getDashBoard(){
         axios.get('/dashboard')
         .then(result => {
             const { contacts, projects } = result.data;
@@ -78,7 +104,6 @@ class Dashboard extends Component {
     }
     renderProjets(){
         const { projects } = this.state;
-        console.log(projects);
         return (
             <table className="table">
                 <thead>
@@ -95,11 +120,15 @@ class Dashboard extends Component {
                 <tbody>
                     {projects.length > 0 && projects.map((project, i) => { 
                         let { _id, name, highlight, description, link, categories, image } =  project;
-                        console.log(image.link)
                         return (
                             <tr key={_id}>
                                 <th scope="row">{i+1}
-                                    <button className="btn btn-defaul btn-xs" id="delete_project">x
+                                    <button 
+                                    value={_id}
+                                    name={image.name}
+                                    onClick={this.removeProject.bind(this)}
+                                    className="btn btn-defaul btn-xs" 
+                                    id="delete_project">x
                                     </button>
                                 </th>
                                 <td>{name}</td>
@@ -154,7 +183,11 @@ class Dashboard extends Component {
                             </div>
                         </div>
                         <div className="row">
-                            {this.state.isModalOpen == true && <ModalForm toggleModal={this.toggleModal}/>}
+                            {this.state.isModalOpen == true && 
+                                <ModalForm 
+                                    toggleModal={this.toggleModal}
+                                    getDashBoard={this.getDashBoard}
+                            />}
                             {mode === 'contact lists' ? this.renderContacts() : this.renderProjets()}
                         </div>
                     </div>

@@ -1,14 +1,84 @@
 // Include React
 import React, { Component } from "react";
+import axios from 'axios';
+import Isotope from 'isotope-layout';
+import ReactDOM from "react-dom";
+
 
 // Create Portfolio class
 class Portfolio extends Component {
+	constructor(props){
+		super(props)
+		this.state = {
+			projects: [],
+			categories:[
+				{
+					type: "all",
+					fa: "fa fa-tasks",
+					total: 6
+				},
+				{
+					type: "authentication",
+					fa: "fa fa-lock",
+					total: 1
+				},
+				{
+					type: "react",
+					fa: "fa fa-code",
+					total: 2
+				},
+				{
+					type: "single-page-applications",
+					fa: "fa fa-html5",
+					total: 4
+				},
+				{
+					type: "SEO",
+					fa: "fa fa-line-chart",
+					total: 1
+				}
+			],
+			activeFilter: "all"
+		}
+		this.handleCatClick = this.handleCatClick.bind(this);
+		this.iso = null;
+	}
 
 	componentDidMount(){
-		$.getScript("js/isotope-config.js");
+		this.iso = new Isotope(ReactDOM.findDOMNode(this.refs.isotopeContainer))
+		this.iso.arrange({filter:"*"});
+		axios.get('/project')
+        .then(result => {
+            const { projects } = result.data;
+            if(result.data.projects) {
+                this.setState({ projects });
+            } 
+        })
+		.catch(err => console.log(err))
+	}
+	handleCatClick(event){
+		
+		const { value } = event.target.dataset;
+		this.iso.arrange({ filter: `.${value}` });
+		this.setState({ activeFilter : value });
+	}
+	renderCategories(category, i){
+		const { type, fa, total } = category;
+			return(
+				<li key={i}
+				data-value={type}
+				onClick={this.handleCatClick}
+				className={type === this.state.activeFilter ? "active" : ""}
+				>
+				<span>{total}</span>
+				<i className={fa}></i>
+				{type}
+				</li>
+			)
 	}
 
     render(){
+		console.log(this)
         return(
             <section id="portfolio" className="section">
 			<div className="container-fluid">
@@ -19,28 +89,22 @@ class Portfolio extends Component {
 						</div>
 					</div>
 				</div>
-						
+			
 				<div className="row">
 					<div className="col-md-12 col-sm-12 col-xs-12">
-						{/* <!-- portfolio Nav --> */}
 						<div className="portfolio-nav">
 							<ul>
-								<li className="active" data-filter="*"><span>06</span><i className="fa fa-tasks"></i>All Projects</li>
-								<li data-filter=".auth"><span>01</span><i className="fa fa-lock"></i>Authentication</li>
-								<li data-filter=".react"><span>02</span><i className="fa fa-code"></i>ReactJS</li>
-								<li data-filter=".SPA"><span>04</span><i className="fa fa-html5"></i>Single-Page Application</li>
-								<li data-filter=".SEO"><span>01</span><i className="fa fa-line-chart"></i>SEO & Marketing</li>
+								{this.state.categories.map(this.renderCategories.bind(this))}
 							</ul>
 						</div>
-						{/* <!--/ End portfolio Nav --> */}
 					</div>
 				</div>
 						
 				<div className="portfolio-inner">
 					<div className="row stylex">	
-						<div className="isotop-active">
+						<div className="isotop-active" ref="isotopeContainer">
 							{/* <!-- Single portfolio --> */}
-							<div className="mix react SPA col-md-4 col-sm-6 col-xs-12 col-fix ">
+							<div className="mix all react single-page-applications authentication col-md-4 col-sm-6 col-xs-12 col-fix ">
 								<div className="portfolio-single">
 									<div className="portfolio-head">
 										<img src="../img/bell_portfolio.png" alt="Bell's Portfolio"/>
@@ -57,7 +121,7 @@ class Portfolio extends Component {
 							</div>
 							{/* <!--/ End portfolio -->					 */}
 							{/* <!-- Single portfolio --> */}
-							<div className="mix MongDB SPA col-md-4 col-sm-6 col-xs-12 col-fix">
+							<div className="mix all MongDB SPA col-md-4 col-sm-6 col-xs-12 col-fix">
 								<div className="portfolio-single">
 									<div className="portfolio-head">
 										<img src="../img/mongo_project.png" alt="MongoDB Project"/>
@@ -74,7 +138,7 @@ class Portfolio extends Component {
 							</div>
 							{/* <!--/ End portfolio --> */}
 							{/* <!-- Single portfolio --> */}
-							<div className="mix auth col-md-4 col-sm-6 col-xs-12 col-fix">
+							<div className="mix all authentication col-md-4 col-sm-6 col-xs-12 col-fix">
 								<div className="portfolio-single">
 									<div className="portfolio-head">
 										<img src="../img/project_we.png" alt="WE Project"/>
@@ -91,7 +155,7 @@ class Portfolio extends Component {
 							</div>
 							{/* <!--/ End portfolio -->	 */}
 							{/* <!-- Single portfolio --> */}
-							<div className="mix react MongoDB SPA col-md-4 col-sm-6 col-xs-12 col-fix">
+							<div className="mix all react MongoDB SPA col-md-4 col-sm-6 col-xs-12 col-fix">
 								<div className="portfolio-single">
 									<div className="portfolio-head">
 										<img src="../img/react_project.png" alt="React Application"/>
@@ -108,7 +172,7 @@ class Portfolio extends Component {
 							</div>
 							{/* <!--/ End portfolio --> */}	
 							{/* <!-- Single portfolio --> */}
-							<div className="mix SEO col-md-4 col-sm-6 col-xs-12 col-fix">
+							<div className="mix  all SEO col-md-4 col-sm-6 col-xs-12 col-fix">
 								<div className="portfolio-single">
 									<div className="portfolio-head">
 										<img src="../img/txltc.png" alt="TXLTC"/>
@@ -125,7 +189,7 @@ class Portfolio extends Component {
 							</div>
 							{/* <!--/ End portfolio -->	 */}		
 							{/* <!-- Single portfolio --> */}
-							<div className="mix MySQL SPA col-md-4 col-sm-6 col-xs-12 col-fix">
+							<div className="mix all MySQL SPA col-md-4 col-sm-6 col-xs-12 col-fix">
 								<div className="portfolio-single">
 									<div className="portfolio-head">
 										<img src="../img/sequelized_project.png" alt="Sequelize Project"/>

@@ -54,7 +54,7 @@ class ModalForm extends Component {
             
             if (valid){
                 const { name, highlight, description, link, categories, image } = this.state
-                axios.post('/project', {
+                axios.post('/project/save', {
                     name,
                     highlight,
                     description,
@@ -63,7 +63,10 @@ class ModalForm extends Component {
                     image
                 })
                 .then( res => {
-                    console.log(res);
+                    if(res.data.success){
+                        this.toggleModal();
+                        this.props.getDashBoard();
+                    }
                 })
                 .catch( err => console.log(err));
             }
@@ -117,7 +120,7 @@ class ModalForm extends Component {
     addNewCat(event){
         event.preventDefault();
         let newCatArr = [...this.state.categories];
-        newCatArr.push({category: '', FA: ''});
+        newCatArr.push({category: '', fa: ''});
         this.setState({ categories:  newCatArr });
     }
     removeCat(event){
@@ -141,7 +144,7 @@ class ModalForm extends Component {
                         />
                         <input
                         placeholder="font awesome"
-                        value={this.state.categories[i].FA}
+                        value={this.state.categories[i].fa}
                         tabIndex={i}
                         name="font-awesome"
                         onChange={this.handleChange}

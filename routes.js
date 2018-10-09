@@ -8,5 +8,7 @@ module.exports = function (app) {
 
     app.get('/dashboard', dashboardController.getData);
 
-    app.post('/project', projectController.saveProject);
+    app.get('/project', projectController.getProject);
+    app.post('/project/save', projectController.saveProject);
+    app.delete('/project/delete', projectController.deleteProject);
 };
