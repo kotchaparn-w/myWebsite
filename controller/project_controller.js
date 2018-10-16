@@ -25,12 +25,10 @@ module.exports = {
     },
     
     deleteProject: (req, res)=> {
-        console.log(req.body.projectId);
         Project.findOneAndDelete({_id: req.body.projectId}, (err, doc)=> {
             if(err) {
                 console.log(err);
             } else {
-                console.log(doc);
                 res.json({success: true});
             }
         });

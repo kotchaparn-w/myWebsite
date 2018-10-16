@@ -45,18 +45,14 @@ class Main extends Component {
             }
         });
 
-        // 	Social JS
-        $('.social-icon li a').on( "click", function(){
-            $('.social').toggleClass('active');
-        });
-
         //Extra JS
         $('.arrow a').on('click', function(event) {
+            event.preventDefault();
 			var $anchor = $(this);
 			$('html, body').stop().animate({
 				scrollTop: $($anchor.attr('href')).offset().top - 20 
 			}, 1000, 'easeInOutQuart');
-			event.preventDefault();
+			
 		});
     }
 

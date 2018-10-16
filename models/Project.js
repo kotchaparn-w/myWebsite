@@ -7,12 +7,7 @@ const ProjectSchema = new Schema({
     highlight: String,
     description: String,
     link: String,
-    categories: [
-        {
-            category: String,
-            fa: String
-        }
-    ],
+    categories: [],
     image: {
             name: String,
             link: String

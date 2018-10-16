@@ -16,7 +16,7 @@ class ModalForm extends Component {
             link:'',
             categories: [
                 {
-                    category: '',
+                    type: '',
                     fa: ''
                 }
             ],
@@ -51,7 +51,6 @@ class ModalForm extends Component {
             }
         }
         validateForm(this.state).then(()=> {
-            
             if (valid){
                 const { name, highlight, description, link, categories, image } = this.state
                 axios.post('/project/save', {
@@ -78,7 +77,7 @@ class ModalForm extends Component {
         const { value, name, tabIndex, files } = event.target;
         if(name === "category"){
             let newCatArr = [...this.state.categories];
-            newCatArr[tabIndex].category = value;
+            newCatArr[tabIndex].type = value;
             this.setState({ categories:  newCatArr });
         } else if (name === "font-awesome"){
             let newCatArr = [...this.state.categories];
@@ -120,7 +119,7 @@ class ModalForm extends Component {
     addNewCat(event){
         event.preventDefault();
         let newCatArr = [...this.state.categories];
-        newCatArr.push({category: '', fa: ''});
+        newCatArr.push({type: '', fa: ''});
         this.setState({ categories:  newCatArr });
     }
     removeCat(event){
@@ -136,7 +135,7 @@ class ModalForm extends Component {
                     <div className="form-group" key={i}>
                         <input
                         placeholder="category"
-                        value={this.state.categories[i].category}
+                        value={this.state.categories[i].type}
                         tabIndex={i}
                         name="category"
                         onChange={this.handleChange}
@@ -164,7 +163,7 @@ class ModalForm extends Component {
                 id="addCat" 
                 onClick={this.addNewCat.bind(this)}
                 className="btn btn-success"
-                >+</button>
+                >Add</button>
             </div>
         )
     }

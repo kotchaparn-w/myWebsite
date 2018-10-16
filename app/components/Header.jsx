@@ -8,9 +8,17 @@ import { Link } from "react-router-dom";
 class Header extends Component {
     constructor(props){
         super(props)
+        this.state = {
+            isSocialOpened: false
+        }
+    }
+    onSocialClick(){
+        this.setState({isSocialOpened: !this.state.isSocialOpened})
     }
 
     render(){
+        const { isSocialOpened }  = this.state;
+        const { location } = this.props;
         return(
             <header id="header">
                 <div className="container">
@@ -29,23 +37,27 @@ class Header extends Component {
                                 <nav className="Headermenu">
                                     <div className="collapse navbar-collapse">
                                         <ul className="nav navbar-nav menu">
-                                            <li className={this.props.location == '/'? "active": ""}>
+                                            <li className={location == '/'? "active": ""}>
                                                 <Link to="/"><i className="fa fa-home"></i>About Me</Link></li>
-                                            <li className={this.props.location == '/portfolio'? "active": ""}>
+                                            <li className={location == '/portfolio'? "active": ""}>
                                                 <Link to="portfolio"><i className="fa fa-briefcase"></i>Portfolio</Link></li>
-                                            <li className={this.props.location == '/timeline'? "active": ""}>
+                                            <li className={location == '/timeline'? "active": ""}>
                                                 <Link to="timeline"><i className="fa fa-history"></i>Timeline</Link></li>
-                                            <li className={this.props.location == '/contact'? "active": ""}>
+                                            <li className={location == '/contact'? "active": ""}>
                                                 <Link to="contact"><i className="fa fa-address-book"></i>Contact</Link></li>
-                                            <li className={this.props.location == '/portal'? "active": ""}>
+                                            <li className={location == '/portal'? "active": ""}>
                                                 <Link to="portal"><i className="fa fa-lock"></i>Portal</Link></li>	
                                         </ul>
                                         <ul className="social-icon">
-                                            <li><a href="#header"><i className="fa fa-plus"></i></a></li>
+                                            <li><a
+                                            onClick={this.onSocialClick.bind(this)}
+                                            href="#header">
+                                            <i className="fa fa-plus"></i>
+                                            </a></li>
                                         </ul>
-                                        <ul className="social">
-                                            <li><a href="https://www.linkedin.com/in/kotchaparn-wongkor"><i className="fa fa-linkedin"></i></a></li>
-                                            <li><a href="https://github.com/kotchaparn-w"><i className="fa fa-github"></i></a></li>
+                                        <ul className={isSocialOpened? "social active" : "social"}>
+                                            <li><a href="https://www.linkedin.com/in/kotchaparn-wongkor"><i className="fab fa-linkedin"></i></a></li>
+                                            <li><a href="https://github.com/kotchaparn-w"><i className="fab fa-github"></i></a></li>
                                             <li><a href="mailto:kotchaparn.w@gmail.com"><i className="fa fa-envelope"></i></a></li>
                                         </ul>
                                     </div>

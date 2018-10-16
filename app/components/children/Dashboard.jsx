@@ -114,6 +114,7 @@ class Dashboard extends Component {
                     <th scope="col">Description</th>
                     <th scope="col">Link</th>
                     <th scope="col">Categories</th>
+                    <th scope="col">Font Awesome</th>
                     <th scope="col">Image</th>
                     </tr>
                 </thead>
@@ -135,7 +136,8 @@ class Dashboard extends Component {
                                 <td>{highlight}</td>
                                 <td>{description}</td>
                                 <td>{link}</td>
-                                <td>{categories.map(category => `${category.category} ` )}</td>
+                                <td>{categories.map(category => `${category.type} `)}</td>
+                                <td>{categories.map(category => `${category.fa} `)}</td>
                                 <td>{image.link}</td>
                             </tr>
                         );                   

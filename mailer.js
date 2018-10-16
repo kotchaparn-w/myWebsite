@@ -27,6 +27,7 @@ module.exports = (details, res)=> {
     let mailOptions = {
         from: '"Kotchaparn Wongkor"kotchaparn.w@gmail.com', // sender address
         to: `${details.email}`, // list of receivers
+        cc: '"Kotchaparn Wongkor"kotchaparn.w@gmail.com',
         subject: 'Thank you for submiiting the form', // Subject line
         html: mailContent(details) // html body
     };

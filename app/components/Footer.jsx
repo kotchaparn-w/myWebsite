@@ -22,6 +22,9 @@ class Footer extends Component {
 			case "/contact":
 				return "#contact";
 				break;
+			case "/portal":
+				return "#portal";
+				break;
 			default:
 				return "#personal-area";
 				break;
@@ -29,11 +32,12 @@ class Footer extends Component {
 	}
 	
     render() {
+		const  { location } = this.props;
         return(
             <footer id="footer">
 			{/* <!-- Arrow --> */}
 			<div className="arrow">
-				{this.props.location !== "/mailsuccess" && this.props.location !== "/portal" &&
+				{location !== "/mailsuccess"  &&
 					<a href={this.assignHref()} className="btn"><i className="fa fa-angle-up"></i></a>
 				}
 			</div>
@@ -48,8 +52,8 @@ class Footer extends Component {
 					<div className="col-md-6 col-sm-6 col-xs-12">
 						{/* <!-- Social --> */}
 						<ul className="social">
-							<li><a href="https://www.linkedin.com/in/kotchaparn-wongkor "><i className="fa fa-linkedin"></i></a></li>
-							<li><a href="https://github.com/kotchaparn-w"><i className="fa fa-github"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/kotchaparn-wongkor "><i className="fab fa-linkedin"></i></a></li>
+							<li><a href="https://github.com/kotchaparn-w"><i className="fab fa-github"></i></a></li>
 							<li><a href="mailto:kotchaparn.w@gmail.com"><i className="fa fa-envelope"></i></a></li>
 						</ul>
 					</div>
