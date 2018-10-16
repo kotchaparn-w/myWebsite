@@ -10,7 +10,6 @@ module.exports = {
             if(err) {
                 console.log(err);
             } else {
-                console.log(doc);
                 // sending an email to a user
                 mailer(req.body, res);
             }
