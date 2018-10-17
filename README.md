@@ -1,7 +1,7 @@
 # Kotchaparn Wongkor
 
 ### About this site
-    A portfolio web application that allows me to check users that have entered contacts, and upload, update, and delete projects through portal. Integrate Google's APIs for sending out mail.
+    A portfolio web application that allows me to check users that have entered contacts, and upload, update, and delete projects through portal. Integrate Google's APIs for sending out responsive email. 
 
 ### Technologies
 * HTML
@@ -30,3 +30,6 @@
 
 ***View Submit Users***
 ![Application Screenshot](/public/img/view_users.png)
+
+***Email***
+![Application Screenshot](/public/img/mail.png)
