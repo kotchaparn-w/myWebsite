@@ -1,7 +1,7 @@
 # Kotchaparn Wongkor
 
 ### About this site
-    A portfolio web application that allows me to check users that have entered contacts, and upload, update, and delete projects through portal.
+    A portfolio web application that allows me to check users that have entered contacts, and upload, update, and delete projects through portal. 
 
 ### Technologies
 * HTML
@@ -15,6 +15,7 @@
 ### Special third parties
 * Particle-JS
 * Isotope-Js
+* nodemailer
 
 
 ### To visit the site
