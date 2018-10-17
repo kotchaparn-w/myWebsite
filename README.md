@@ -1,7 +1,7 @@
 # Kotchaparn Wongkor
 
 ### About this site
-    A portfolio web application that allows me to check users that have entered contacts, and upload, update, and delete projects through portal. 
+    A portfolio web application that allows me to check users that have entered contacts, and upload, update, and delete projects through portal. Integrate Google's APIs for sending out mail.
 
 ### Technologies
 * HTML
@@ -11,6 +11,7 @@
 * React (Javascript library)
 * Node.js (Web-Server Langauge)
 * Mongo(Database)  
+* Firebase (authentication and storage)
 
 ### Special third parties
 * Particle-JS
