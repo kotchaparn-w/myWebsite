@@ -2754,7 +2754,7 @@ input.is-invalid, textarea.is-invalid {
 
 #log-in {
 	padding-top: 0px;
-	height: 76.5%
+	height: auto;
 
 }
 
